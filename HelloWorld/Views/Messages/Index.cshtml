@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HelloWorld.Models.Message>
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Post</h2>
+
+<p>
+    @Html.ActionLink("Post New", "Create")
+</p>
+
+@foreach (var item in Model)
+{  
+<div class="panel panel-default">
+    <div class="panel-heading">
+    @Html.DisplayFor(modelItem => item.Title) from @User.Identity.Name
+    <hr />
+    </div>
+    <div class="panel-body">
+    @Html.DisplayFor(modelItem => item.Text)
+    </div>
+    <div class="panel-footer">@Html.DisplayFor(modelItem => item.TimeSent)</div>
+</div>
+}
