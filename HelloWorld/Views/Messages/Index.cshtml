@@ -2,7 +2,7 @@
 @using Microsoft.AspNet.Identity
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Post";
 }
 
 <h2>Post</h2>
@@ -14,13 +14,13 @@
 @foreach (var item in Model)
 {  
 <div class="panel panel-default">
-    <div class="panel-heading">
+    <div class="panel-heading bg-primary">
     @Html.DisplayFor(modelItem => item.Title) from @User.Identity.Name
     <hr />
     </div>
     <div class="panel-body">
     @Html.DisplayFor(modelItem => item.Text)
     </div>
-    <div class="panel-footer">@Html.DisplayFor(modelItem => item.TimeSent)</div>
+    <div class="panel-footer">Time Sent: @Html.DisplayFor(modelItem => item.TimeSent)</div>
 </div>
 }

@@ -10,41 +10,35 @@ using HelloWorld.Models;
 
 namespace HelloWorld.Controllers
 {
-    [Authorize]
-    public class MessagesController : Controller
+    public class AssignmentsController : Controller
     {
-        private MessageDBContext db = new MessageDBContext();
+        private AssignmentDBContext db = new AssignmentDBContext();
 
-        // GET: Messages
+        // GET: Assignments
         public ActionResult Index()
         {
-            var model = from m in db.Messages
-                        select m;
-
-            model = model.OrderByDescending(m => m.TimeSent);
-
-            return View(model.ToList());
+            return View(db.Assignments.ToList());
         }
 
-        // GET: Messages/Create
+        // GET: Assignments/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Messages/Create
+        // POST: Assignments/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ID,Title,Text,TimeSent")] Message message)
+        public ActionResult Create([Bind(Include = "ID,Title,Subject,TimeSent,TimeEnd")] Assignment assignment)
         {
             if (ModelState.IsValid)
             {
-                db.Messages.Add(message);
+                db.Assignments.Add(assignment);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(message);
+            return View(assignment);
         }
 
         protected override void Dispose(bool disposing)

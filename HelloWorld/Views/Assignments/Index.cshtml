@@ -1,0 +1,26 @@
+﻿@model IEnumerable<HelloWorld.Models.Assignment>
+
+@{
+    ViewBag.Title = "Assignment";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Post Assignment", "Create")
+</p>
+
+@foreach (var item in Model)
+{
+<div class="panel panel-default">
+    <div class="panel-heading bg-primary">
+        @Html.DisplayFor(modelItem => item.Title) from @User.Identity.Name for Subject: @Html.DisplayFor(modelItem => item.Subject)
+        <hr />
+    </div>
+    <div class="panel-body">
+        @Html.DisplayFor(modelItem => item.Text)
+    </div>
+    <div class="panel-footer">Time Sent :@Html.DisplayFor(modelItem => item.TimeSent)</div>
+    <div class="panel-footer bg-danger">Time End :@Html.DisplayFor(modelItem => item.TimeEnd)</div>
+</div>
+}
