@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HelloWorld.Models
 {
-    public class Assignment
+    public class Note
     {
         public int ID { get; set; }
         public string Title { get; set; }
@@ -15,14 +15,10 @@ namespace HelloWorld.Models
         [DataType(DataType.MultilineText)]
         public string Text { get; set; }
         public DateTime TimeSent { get; set; }
-
-        [Display(Name = "Time End")]
-        [DataType(DataType.DateTime)]
-        [DisplayFormat(DataFormatString = "{0:dd:MM:yy}", ApplyFormatInEditMode = true)]
-        public DateTime TimeEnd { get; set; }
     }
-    public class AssignmentDBContext : DbContext
+
+    public class NoteDBContext : DbContext
     {
-        public DbSet<Assignment> Assignments { get; set; }
+        public DbSet<Note> Notes { get; set; }
     }
 }

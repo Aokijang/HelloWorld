@@ -1,0 +1,25 @@
+﻿@model IEnumerable<HelloWorld.Models.Note>
+
+@{
+    ViewBag.Title = "Notes";
+}
+
+<h2>Note</h2>
+
+<p>
+    @Html.ActionLink("Create New Note", "Create")
+</p>
+
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading bg-primary">
+            @Html.DisplayFor(modelItem => item.Title) from @User.Identity.Name for Subject: @Html.DisplayFor(modelItem => item.Subject)
+            <hr />
+        </div>
+        <div class="panel-body">
+            @Html.DisplayFor(modelItem => item.Text)
+        </div>
+        <div class="panel-footer">Time Sent :@Html.DisplayFor(modelItem => item.TimeSent)</div>
+    </div>
+}
