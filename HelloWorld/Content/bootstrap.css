@@ -240,6 +240,10 @@ th {
   }
   .navbar {
     display: none;
+    color: white;
+  }
+  .putih{
+      color: white;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
