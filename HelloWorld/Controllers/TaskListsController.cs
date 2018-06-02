@@ -10,6 +10,7 @@ using HelloWorld.Models;
 
 namespace HelloWorld.Controllers
 {
+    [Authorize]
     public class TaskListsController : Controller
     {
         private TaskListDBContext db = new TaskListDBContext();

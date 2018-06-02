@@ -13,7 +13,7 @@ namespace HelloWorld.Models
         public string Subject { get; set; }
         public string Descriptions { get; set; }
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "0:d", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "0:dd:MM:yyyy", ApplyFormatInEditMode = true)]
         public DateTime Date { get; set; }
     }
 
