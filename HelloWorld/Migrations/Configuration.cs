@@ -5,16 +5,15 @@ namespace HelloWorld.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<HelloWorld.Models.MessageDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<HelloWorld.Models.TaskListDBContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            AutomaticMigrationDataLossAllowed = true;
-            ContextKey = "HelloWorld.Models.MessageDBContext";
+            ContextKey = "HelloWorld.Models.TaskListDBContext";
         }
 
-        protected override void Seed(HelloWorld.Models.MessageDBContext context)
+        protected override void Seed(HelloWorld.Models.TaskListDBContext context)
         {
             //  This method will be called after migrating to the latest version.
 

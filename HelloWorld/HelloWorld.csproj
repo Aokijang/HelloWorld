@@ -201,6 +201,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
     <Compile Include="Controllers\NotesController.cs" />
+    <Compile Include="Controllers\TaskListsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +212,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\TaskList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -279,6 +281,10 @@
     <Content Include="Views\Assignments\Index.cshtml" />
     <Content Include="Views\Notes\Create.cshtml" />
     <Content Include="Views\Notes\Index.cshtml" />
+    <Content Include="Views\TaskLists\Create.cshtml" />
+    <Content Include="Views\TaskLists\Delete.cshtml" />
+    <Content Include="Views\TaskLists\Edit.cshtml" />
+    <Content Include="Views\TaskLists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
